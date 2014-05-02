@@ -1,15 +1,36 @@
 {
-    "name": "ngCclib",
-    "repository": {
-        "type": "git",
-        "url": "https://github.com/cloudControl/ngcclib.git"
-    },
-    "dependencies": {
-        "angular": "1.2.x",
-        "angular-resource": "1.2.x",
-        "angular-cache": "1.2.x"
-    },
-    "devDependencies": {
-        "angular-mocks": "1.2.x"
-    }
+  "name": "ngcclib",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/cloudControl/ngcclib.git"
+  },
+  "dependencies": {
+    "angular": "1.2.x",
+    "angular-resource": "1.2.x",
+    "angular-cache": "1.2.x"
+  },
+  "devDependencies": {
+    "angular-mocks": "1.2.x"
+  },
+  "version": "0.0.1",
+  "homepage": "https://github.com/cloudControl/ngcclib",
+  "authors": [
+    "Anna Traussnig <at@cloudcontrol.de>",
+    "Philipp Strube <pst@cloudcontrol.de>"
+  ],
+  "description": "AngularJS Resources for the cloudControl API",
+  "keywords": [
+    "AngularJS",
+    "Resources",
+    "cloudControl API"
+  ],
+  "license": "Apache 2.0",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
 }
+
