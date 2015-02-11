@@ -41,6 +41,13 @@ angular.module('ngCclib').factory('Deployment', ['$q', '$resource', 'Addon', 'Wo
         }
     };
 
+    var RefreshInterceptor = {
+        'response': function(response) {
+            resourceCache.remove(response.config.url);
+            return Interceptor['response'](response);
+        }
+    };
+
     var QueryInterceptor = {
         'response': function(response) {
             angular.forEach(response.resource, function(r) {
@@ -59,7 +66,7 @@ angular.module('ngCclib').factory('Deployment', ['$q', '$resource', 'Addon', 'Wo
         deploy: {method: 'PUT', interceptor: Interceptor},
         save: {method: 'POST', interceptor: Interceptor},
         get: {method: 'GET', interceptor: Interceptor, cache: resourceCache},
-        refresh: {method: 'GET', interceptor: Interceptor, cache: false}, // like get but doesn't cache, used for TutorialController.checkDeployed() and DeploymentsController.revert()
+        refresh: {method: 'GET', interceptor: RefreshInterceptor, cache: resourceCache}, // First clears cache in RefreshInterceptor and then caches new response from API
         query: {method: 'GET', isArray: true, interceptor: QueryInterceptor, cache: resourceCache}
     });
 
