@@ -22,7 +22,8 @@ angular.module('ngCclib').factory('User', ['$q', '$resource', 'resourceCache', '
         update: {method: 'PUT'},
         activate: {method: 'PUT'},
         get: {method: 'GET', cache: resourceCache},
-        query: {method: 'GET', isArray: true, cache: resourceCache}
+        query: {method: 'GET', isArray: true, cache: resourceCache},
+        patch: {method: 'PATCH'}
     });
 
     // first get the list to find the username, then get the user
