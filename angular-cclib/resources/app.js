@@ -34,6 +34,7 @@ angular.module('ngCclib').factory('App', ['$q', '$resource', 'Deployment', 'reso
         id: '@name'
     }, {
         get: {method: 'GET', interceptor: Interceptor, cache: resourceCache},
+        getorig: {method: 'GET', cache: resourceCache}, // untempered API response
         query: {method: 'GET', isArray: true, cache: resourceCache}
     });
 

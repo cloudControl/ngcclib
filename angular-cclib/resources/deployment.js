@@ -66,6 +66,7 @@ angular.module('ngCclib').factory('Deployment', ['$q', '$resource', 'Addon', 'Wo
         deploy: {method: 'PUT', interceptor: Interceptor},
         save: {method: 'POST', interceptor: Interceptor},
         get: {method: 'GET', interceptor: Interceptor, cache: resourceCache},
+        getorig: {method: 'GET', cache: resourceCache}, // untempered API response
         refresh: {method: 'GET', interceptor: RefreshInterceptor, cache: resourceCache}, // First clears cache in RefreshInterceptor and then caches new response from API
         query: {method: 'GET', isArray: true, interceptor: QueryInterceptor, cache: resourceCache}
     });
